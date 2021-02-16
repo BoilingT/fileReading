@@ -82,9 +82,5 @@ bool fileHandler::writeFile(std::string fileName, std::string content) {
 }
 
 bool fileHandler::createDir(const char* path) {
-	if (_mkdir(path))
-	{
-		return true;
-	}
-	return false;
+	return _mkdir(path) ? true : false;
 }
