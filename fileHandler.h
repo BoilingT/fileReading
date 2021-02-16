@@ -3,6 +3,9 @@
 #include <fstream>
 #include <stdio.h>
 #include <iostream>
+#include <direct.h>
+#include <list>
+
 
 class fileHandler
 {
@@ -10,12 +13,12 @@ public:
 	int writeFile(std::string fileName, std::string content);
 	bool readFile(std::string fileName, std::string & content);
 	bool removeFile(const char * fileName);
+	bool createDir(const char* path);
 
 
 private:
 	std::fstream file;
 
-	bool createDirectory(std::string path, std::string directoryName);
 	bool openFile(std::string fileName);
 	bool createFile(std::string fileName);
 	void closeFile();

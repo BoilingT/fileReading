@@ -9,8 +9,7 @@ int main() {
 	fileHandler fHandler;
 	string content;
 
-	fHandler.removeFile("textFile.txt");
-
+	//fHandler.removeFile("textFile.txt");
 	fHandler.writeFile("textFile.txt", "This is a textfile with\nMultiple lines!");
 	if (fHandler.readFile("textFile.txt", content)) {
 		std::cout << content << std::endl;

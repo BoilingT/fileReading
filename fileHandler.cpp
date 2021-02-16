@@ -80,3 +80,11 @@ int fileHandler::writeFile(std::string fileName, std::string content) {
 
 	return -1;
 }
+
+bool fileHandler::createDir(const char* path) {
+	if (_mkdir(path))
+	{
+		return true;
+	}
+	return false;
+}
