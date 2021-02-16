@@ -25,11 +25,14 @@ bool fileHandler::removeFile(const char * fileName) {
 	{
 		fileHandler::closeFile();
 	}
-	if (std::remove(fileName))
+	try
 	{
+		std::remove(fileName);
 		return true;
 	}
-	else {
+	catch (const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
 		return false;
 	}
 }
