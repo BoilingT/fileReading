@@ -10,9 +10,10 @@ bool fileHandler::openFile(std::string fileName) {
 	return false;
 }
 
-void fileHandler::createFile(std::string fileName) {
+bool fileHandler::createFile(std::string fileName) {
 	std::ofstream outFile(fileName);
 	outFile.close();
+	return true;
 }
 
 void fileHandler::closeFile() {
@@ -33,23 +34,28 @@ bool fileHandler::removeFile(const char * fileName) {
 	}
 }
 
-std::string fileHandler::readFile(std::string fileName) {
-
-	//Variable for containing the entire content of the file
-	std::string content;
-	//Variable for containing a single line of the file
-	std::string line;
-
-	file = std::fstream(fileName);
-
-	//Reading the file
-	while (std::getline(file, line))
+bool fileHandler::readFile(std::string fileName, std::string & content) {
+	try
 	{
-		content += line + "\n";
-	}
+		//Variable for containing a single line of the file
+		std::string line;
 
-	file.close();
-	return content;
+		file = std::fstream(fileName);
+
+		//Reading the file
+		while (std::getline(file, line))
+		{
+			content += line + "\n";
+		}
+
+		file.close();
+		return true;
+
+	}
+	catch (const std::exception&)
+	{
+		return false;
+	}
 }
 
 int fileHandler::writeFile(std::string fileName, std::string content) {

@@ -7,18 +7,17 @@
 class fileHandler
 {
 public:
-	//int closeFile();
-
 	int writeFile(std::string fileName, std::string content);
-	std::string readFile(std::string fileName);
+	bool readFile(std::string fileName, std::string & content);
 	bool removeFile(const char * fileName);
 
 
 private:
 	std::fstream file;
 
+	bool createDirectory(std::string path, std::string directoryName);
 	bool openFile(std::string fileName);
-	void createFile(std::string fileName);
+	bool createFile(std::string fileName);
 	void closeFile();
 
 };
