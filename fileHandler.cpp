@@ -61,12 +61,12 @@ bool fileHandler::readFile(std::string fileName, std::string & content) {
 	}
 }
 
-int fileHandler::writeFile(std::string fileName, std::string content) {
+bool fileHandler::writeFile(std::string fileName, std::string content) {
 	//Open and create the file
 	if (fileHandler::openFile(fileName)) {
 		//Write to the file
 		file << content;
-		return 0;
+		return true;
 	}
 	else
 	{
@@ -75,10 +75,10 @@ int fileHandler::writeFile(std::string fileName, std::string content) {
 		file = std::fstream(fileName);
 
 		file << content;
-		return 0;
+		return true;
 	}
 
-	return -1;
+	return false;
 }
 
 bool fileHandler::createDir(const char* path) {

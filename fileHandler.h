@@ -10,7 +10,7 @@
 class fileHandler
 {
 public:
-	int writeFile(std::string fileName, std::string content);
+	bool writeFile(std::string fileName, std::string content);
 	bool readFile(std::string fileName, std::string & content);
 	bool removeFile(const char * fileName);
 	bool createDir(const char* path);
