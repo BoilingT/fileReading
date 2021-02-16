@@ -1,0 +1,2 @@
+C:\Users\to9751\Documents\Coding\c++\readingFiles\fileReading\x64\Debug\fileReading.exe
+C:\Users\to9751\Documents\Coding\c++\readingFiles\fileReading\x64\Debug\fileReading.pdb
